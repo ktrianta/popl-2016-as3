@@ -3,11 +3,33 @@
 
 @import "{{ site.theme }}";
 
-h1 {
+h1#project_title {
   font-size: 30px;
   font-weight: 700;
 }
 
+h2#project_tagline {
+  font-size: 22px;
+}
+
 .inner {
     max-width: 960px !important;
+}
+
+.downloads {
+  display: block;
+  padding-left: 50px;
+  color: #f2f2f2;
+  position: relative;
+  height: 70px;
+  background: url(../images/download.svg) no-repeat center left;
+  background-size: 25px 20px;
+}
+
+.downloads a {
+  margin-right: 20px;
+}
+
+.downloads a:hover {
+  text-decoration: underline solid #fff;
 }
