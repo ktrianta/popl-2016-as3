@@ -15,3 +15,31 @@ layout: default
 
 * Ένα καλό ξεκίνημα (πέρα από τις σημειώσεις του μαθήματος) θα ήταν το
 [learnyouahaskell.com](http://learnyouahaskell.com)
+
+> Προσπαθώντας να τρέξουμε το βοηθητικό αρχείο σε Windows WinGHCi 8.0.1 παίρνουμε
+το error **Failed to load interface for ‘System.Random’**.
+
+Μπορείτε να [κατεβάσετε το cabal](https://www.haskell.org/cabal/release/cabal-install-1.24.0.2/cabal-install-1.24.0.2-x86_64-unknown-mingw32.zip)
+(package manager της Ηaskell) και να βάλετε το cabal.exe στον ίδιο φάκελο με το
+ghci (συνήθως C:\Program Files\Haskell Platform\YOUR_VERSION\bin). Εν συνεχεία
+ανοίγετε μία κονσόλα σε αυτόν τον φάκελο και τρέχετε:
+
+* cabal update
+* cabal install random
+
+> Χρειάζεται να γίνεται έλεγχος για την ορθότητα των ορισμάτων των συναρτήσεων;
+
+Όχι, δεν χρειάζεται. Αν δωθεί οτιδήποτε δεν προβλέπεται από την εκφώνηση, π.χ.
+λάθος width/height ή συντεταγμένες εκτός των ορίων ή maze χωρίς λύση, θεωρείται
+undefined behaviour.
+
+> Η showMaze επιστρέφει ένα string που περιέχει χαρακτήρες *'\n'*. Είναι σωστό να
+καλούμε την putStrLn μέσα στην showMaze ώστε να εκτυπώνεται σωστά ο λαβύρινθος;
+
+Δεν χρειάζεται να καλείτε την putStrLn. Γυρνάτε το String με τα *'\n'*, ώστε αν
+καλέσουμε **putStrLn (showMaze m)** να γίνεται κανονικά η εκτύπωση.
+
+> Στον ορισμό του Maze προσθέσαμε το derinving (Show). Να το αφήσουμε και για
+δική σας διευκόλυνση;
+
+Δεν υπάρχει πρόβλημα, αφού δεν αλλάζει κάτι στην ουσία του data type.
